@@ -52,7 +52,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx_autodoc_typehints',
     "sphinx.ext.viewcode",
-    'sphinx_rtd_theme',
+#    'sphinx_rtd_theme',
     'nbsphinx',
     'sphinx.ext.autosectionlabel',
 ]
