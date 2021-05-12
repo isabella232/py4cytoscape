@@ -2,10 +2,6 @@
 #
 # Configuration file for the Sphinx documentation builder.
 #
-# This file does only contain a selection of the most common options. For a
-# full list see the documentation:
-# http://www.sphinx-doc.org/en/master/config
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -17,18 +13,13 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('./..'))
 
-# This is here as a signal to decorators in py4cytoscape. They should return
-# the decorated function instead of the function wrapper they normally would.
-# This allows AutoDoc to pick up the function signatures as defined so they
-# don't need to be manually generated in the *.rst files.
-##os.environ['SPHINX_BUILD'] = 'TRUE'
-
 
 # -- Project information -----------------------------------------------------
 
 project = 'py4cytoscape'
 copyright = f"2018-{date.today().year}, The Cytoscape Consortium"
 author = 'Barry Demchak'
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -38,8 +29,9 @@ author = 'Barry Demchak'
 extensions = [
     'sphinx_rtd_theme',
 ]
-
-# source_suffix = ['.rst', '.md']
+# The suffix(es) of source filenames.
+# You can specify multiple suffix as a list of string:
+#
 source_suffix = '.rst'
 
 # The master toctree document.
@@ -52,16 +44,14 @@ master_doc = 'index'
 # Usually you set "language" from the command line for these cases.
 language = None
 
+
+
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-# [BD] Alabaster is the default, but is too white, so I commented out: html_theme = 'alabaster'
-# Note that this means we can also comment out certain CSS (located in _static/css)
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme" # "nature" # "alabaster" # "sphinx_rtd_theme" #"classic"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
