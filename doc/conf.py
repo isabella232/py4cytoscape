@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath('./..'))
 # the decorated function instead of the function wrapper they normally would.
 # This allows AutoDoc to pick up the function signatures as defined so they
 # don't need to be manually generated in the *.rst files.
-os.environ['SPHINX_BUILD'] = 'TRUE'
+##os.environ['SPHINX_BUILD'] = 'TRUE'
 
 
 # -- Project information -----------------------------------------------------
@@ -58,14 +58,14 @@ extensions = [
 ]
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::) in autodoc
-add_module_names = False
+##add_module_names = False
 # if True, gets function signatures added to docstring
-napoleon_use_param = True
+##napoleon_use_param = True
 # If true, generates autosummaries
-autosummary_generate = True
+##autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+##templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -86,7 +86,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', '_templates']
+##exclude_patterns = ['_build', '_templates']
 
 # The name of the Pygments (syntax highlighting) style to use.
 ##pygments_style = None
@@ -120,11 +120,11 @@ html_theme = "sphinx_rtd_theme" # "nature" # "alabaster" # "sphinx_rtd_theme" #"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+##html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = "%b %d, %Y"
+##html_last_updated_fmt = "%b %d, %Y"
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
