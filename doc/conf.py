@@ -101,7 +101,7 @@ exclude_patterns = ['_build', '_templates']
 # Note that this means we can also comment out certain CSS (located in _static/css)
 # import sphinx_rtd_theme
 # html_theme = "sphinx_rtd_theme"
-html_theme = "alabaster" "sphinx_rtd_theme" #"classic"
+html_theme = "alabaster" # "sphinx_rtd_theme" #"classic"
 # html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # [BD] from http://stackoverflow.com/questions/32079200/how-do-i-set-up-custom-styles-for-restructuredtext-sphinx-readthedocs-etc/32079202#32079202
 ##html_logo = '_static/images/cytoscape3-icon-trans-128x128.png'
