@@ -51,7 +51,7 @@ language = None
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme" # "nature" # "alabaster" # "sphinx_rtd_theme" #"classic"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
+html_static_path = ['_static']
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
