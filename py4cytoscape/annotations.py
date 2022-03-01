@@ -38,6 +38,8 @@ from .py4cytoscape_sandbox import *
 from .py4cytoscape_utils import *
 from .py4cytoscape_logger import cy_log
 
+_MAX_OPACITY=100
+
 
 @cy_log
 def add_annotation_text(text=None, x_pos=None, y_pos=None, font_size=None, font_family=None, font_style=None,
@@ -980,7 +982,7 @@ def _get_border_cmd_string(border_thickness, border_color, border_opacity):
     if border_opacity is None:
         border_opacity_cmd = ''
     else:
-        verify_opacity(border_opacity)
+        verify_opacity(border_opacity, _MAX_OPACITY)
         border_opacity_cmd = f' borderOpacity="{border_opacity}"'
 
     return border_thickness_cmd + border_color_cmd + border_opacity_cmd
@@ -990,7 +992,7 @@ def _get_opacity_cmd_string(opacity):
     if opacity is None:
         return ''
     else:
-        verify_opacity(opacity)
+        verify_opacity(opacity, _MAX_OPACITY)
         return f' opacity="{opacity}"'
 
 
@@ -1081,5 +1083,5 @@ def _get_text_cmd_string(text, optional=False):
 
 def _get_annotation_name_cmd_string(annotation_name):
     if annotation_name is None:
-        raise CyError("Must provide the UUID (or list of UUIDs) to group")
+        raise CyError("Must provide the UUID or name")
     return f' uuidOrName="{annotation_name}"'
