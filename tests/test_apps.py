@@ -32,7 +32,7 @@ class AppsTests(unittest.TestCase):
     def tearDown(self):
         pass
 
-    
+
     @print_entry_exit
     def test_get_app_information(self):
         # Verify that a well-formed information record is returned for a known app
@@ -46,7 +46,7 @@ class AppsTests(unittest.TestCase):
         # Verify that an unknown app is caught
         self.assertRaises(CyError, get_app_information, 'bogus')
 
-    
+
     @print_entry_exit
     def test_get_available_apps(self):
         # Verify that app list contains expected dicts and at least some of the expected apps
@@ -56,7 +56,7 @@ class AppsTests(unittest.TestCase):
         app_names = {app_info['appName'] for app_info in res}
         self.assertTrue(app_names.issuperset({'stringApp', 'BiNGO', 'CyPath2'}))
 
-    
+
     @print_entry_exit
     def test_get_installed_apps(self):
         # Verify that app list contains expected dicts and at least some of the expected apps
@@ -71,7 +71,7 @@ class AppsTests(unittest.TestCase):
              'Network Merge', 'CyCL', 'BioPAX Reader', 'NetworkAnalyzer', 'ID Mapper', 'CX Support',
              'OpenCL Prefuse Layout', 'JSON Support'}))
 
-    
+
     @print_entry_exit
     def test_list_disable_enable_apps(self):
         # Initialization
@@ -120,7 +120,7 @@ class AppsTests(unittest.TestCase):
         self.assertDictEqual(disable_app(EMPTY_APP_NAME), {'appName': EMPTY_APP_NAME})
         self.assertNotIn(EMPTY_APP_NAME, [app['appName'] for app in get_disabled_apps()])
 
-    
+
     @print_entry_exit
     def test_install_uninstall_app(self):
         # Initialization
@@ -168,13 +168,13 @@ class AppsTests(unittest.TestCase):
         self.assertDictEqual(uninstall_app(EMPTY_APP_NAME), {'appName': EMPTY_APP_NAME})
         self.assertNotIn(EMPTY_APP_NAME, {app_info['appName'] for app_info in get_installed_apps()})
 
-    
+
     @print_entry_exit
     def test_get_app_updates(self):
         # Testing this requires some pretty contrived app store setup, so we just go simple here
         self.assertIsInstance(get_app_updates(), list)
 
-    
+
     @unittest.skipIf(skip_for_ui(), 'Avoiding test that requires user response')
     @print_entry_exit
     def test_open_app_store(self):
@@ -185,13 +185,13 @@ class AppsTests(unittest.TestCase):
         self.assertDictEqual(open_app_store(APP_NAME), {})
         input('Verify that the app store page for ' + APP_NAME + ' is loaded')
 
-        self.assertDictEqual(open_app_store(BAD_APP_NAME), {})
-        input('Verify that an app store error page is loaded')
+        self.assertEqual(open_app_store(BAD_APP_NAME), 'name:"totaljunk" is not found in the Cytoscape App Store.')
+        input('Verify that an app store error page is not loaded')
 
         self.assertDictEqual(open_app_store(''), {})
         input('Verify that the app store main page is loaded')
 
-    
+
     @print_entry_exit
     def test_get_app_status(self):
         # Initialization
@@ -214,7 +214,7 @@ class AppsTests(unittest.TestCase):
         self.assertRaises(CyError, get_app_status, EMPTY_APP_NAME)
         self.assertRaises(CyError, get_app_status, BAD_APP_NAME)
 
-    
+
     @print_entry_exit
     def test_update_app(self):
         # Initialization

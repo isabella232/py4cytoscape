@@ -285,7 +285,7 @@ def open_app_store(app, base_url=DEFAULT_BASE_URL):
         res = commands.commands_post(f'apps open appstore app="{app}"', base_url=base_url)
         return narrate(res)
     else:
-        narrate(f'name:"{app}" is not found in the Cytoscape App Store.')
+        return narrate(f'name:"{app}" is not found in the Cytoscape App Store.')
 
 
 @cy_log
